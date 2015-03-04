@@ -26,7 +26,7 @@
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register test/**/*.coffee"
+    "test": "mocha --compilers coffee:coffee-script/register test/*/*.coffee test/*/*/*.coffee"
   },
   "readme": "",
   "readmeFilename": "README.md",
