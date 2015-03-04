@@ -11,6 +11,9 @@
     "hubot",
     "hubot-scripts"
   ],
+  "dependencies": {
+    "coffee-script": ">=1.6.3"
+  },
   "peerDependencies": {
     "hubot": "2.x"
   },
@@ -19,11 +22,11 @@
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",
-    "sinon": "*",
+    "sinon": "*"
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "grunt test"
+    "test": "mocha --compilers coffee:coffee-script/register test/**/*.coffee"
   },
   "readme": "",
   "readmeFilename": "README.md",
