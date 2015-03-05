@@ -1,6 +1,8 @@
 Hubot Bitbucket Listener
 ========================
 
+[![Build Status](https://travis-ci.org/andrewtarry/hubot-bitbucket.svg?branch=master)](https://travis-ci.org/andrewtarry/hubot-bitbucket)
+
 The Hubot Bitbucket listener allows custom Bitbucket Post hooks be set up that will inform Hubot when events occur. The hook data will then be parsed and an event will be fired that custom scripts can listen for.
 
 Installation
@@ -22,13 +24,13 @@ Variable | Default | Effect
 
 Use
 
-The Hubot Bitbucket Listener will not do anything with the data by default so there will be nothing added to a room. The listener will only parse the request and emit and event that you can listen for. If you want to have `Hubot` notify a room then you can easily do that. 
+The Hubot Bitbucket Listener will not do anything with the data by default so there will be nothing added to a room. The listener will only parse the request and emit and event that you can listen for. If you want to have `Hubot` notify a room then you can easily do that.
 
 ```coffeescript
 
 robot.on "bitbucketPushReceived", (pushEvent) ->
     push = pushEvent.push
-    
+
     # Do things
 ```
 
@@ -44,7 +46,7 @@ for commit in push.commits
 	author = commit.author # bitbucket username
 	branch = commit.master # e.g. master
 	message = commit.message # A really clear message
-	
+
 	for file in commit.files
 		file = file.filename # e.g. somefile.py
 		type = file.type # i.e. modified, added etc
