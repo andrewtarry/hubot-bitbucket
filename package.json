@@ -1,7 +1,7 @@
 {
   "name": "hubot-bitbucket",
   "description": "A hubot script to listen for bitbucket activity",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": {
     "name": "Andrew Tarry",
     "email": "andrew@andrewtarry.com"
@@ -20,15 +20,11 @@
   "devDependencies": {
     "hubot": "2.x",
     "mocha": "*",
-    "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*"
+    "chai": "*"
   },
   "main": "index.coffee",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register test/*/*.coffee test/*/*/*.coffee"
   },
-  "readme": "",
-  "readmeFilename": "README.md",
-  "_id": "hubot-bitbucket@0.0.1"
+  "readmeFilename": "README.md"
 }
