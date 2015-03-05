@@ -1,7 +1,7 @@
 {
   "name": "hubot-bitbucket",
   "description": "A hubot script to listen for bitbucket activity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Andrew Tarry",
     "email": "andrew@andrewtarry.com"
