@@ -26,5 +26,12 @@
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register test/*/*.coffee test/*/*/*.coffee"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andrewtarry/hubot-bitbucket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewtarry/hubot-bitbucket/issues"
+  }
 }
