@@ -13,4 +13,5 @@ class Commit
   addFile: (file) ->
     @files.push file
 
+
 module.exports = Commit
