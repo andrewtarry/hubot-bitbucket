@@ -78,13 +78,47 @@ describe 'Push actions entity', ->
 
   describe 'buildCommit', ->
 
+    commitData = {
+        author: "marcus"
+        branch: "master"
+        files: [
+            {
+                file: "somefile.py"
+                type: "modified"
+            }
+        ],
+        message: "Added some more things to somefile.py\n",
+        node: "620ade18607a",
+        "parents": [
+            "702c70160afc"
+        ],
+        "raw_author": "Marcus Bertrand <marcus@somedomain.com>",
+        "raw_node": "620ade18607ac42d872b568bb92acaa9a28620e9",
+        "revision": null,
+        "size": -1,
+        "timestamp": "2012-05-30 05:58:56",
+        "utctimestamp": "2012-05-30 03:58:56+00:00"
+    }
+
     commit = null
 
     beforeEach ->
-      commit = actions.buildCommit input
+      commit = actions.buildCommit commitData
 
     it 'should be an instance of Commit', ->
       expect(commit).to.be.an.instanceof Commit
+
+    it 'should have correct values', ->
+      expect(commit.author).to.equal 'marcus'
+      expect(commit.branch).to.equal 'master'
+      expect(commit.message).to.equal "Added some more things to somefile.py\n"
+
+    it 'should have no files', ->
+      empty = new Commit
+      expect(empty.files).to.have.length 0
+
+    it 'should build files', ->
+      expect(commit.files).to.have.length 1
 
   describe 'parse', ->
 
@@ -103,3 +137,10 @@ describe 'Push actions entity', ->
       expect(repo.url).to.equal 'https://bitbucket.org/marcus/project-x/'
       expect(repo.name).to.equal 'Project X'
       expect(repo.slug).to.equal 'project-x'
+
+    it 'should have commits', ->
+      expect(push.commits).to.have.length 1
+
+      commit = push.commits[0]
+
+      expect(commit).to.be.an.instanceof Commit
