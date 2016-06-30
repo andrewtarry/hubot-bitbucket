@@ -9,10 +9,10 @@ describe 'Repository entity', ->
   it 'should set values', ->
     url = 'url'
     name = 'name'
-    slug = 'slug'
+    fullName = 'fullName'
 
-    repo = new Repository url, name, slug
+    repo = new Repository url, name, fullName
 
     expect(repo.url).to.equal url
     expect(repo.name).to.equal name
-    expect(repo.slug).to.equal slug
+    expect(repo.fullName).to.equal fullName
