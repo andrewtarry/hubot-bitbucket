@@ -9,12 +9,13 @@ pushActions =
   buildRepo: (input) ->
     repoData = input.repository
 
-    new Repository "#{repoData.links.html.href}", repoData.name, repoData.full_name
+    new Repository repoData.links.html.href, repoData.name, repoData.full_name
 
   # Build a commit entity from the api data
   buildCommit: (changeData, commitData) ->
     branch = if changeData.new? then changeData.new.name else changeData.old.name
-    commit = new Commit commitData.author.user.username, branch, commitData.message
+    commit = new Commit commitData.author.user.username, branch,
+      commitData.message, commitData.links.html.href
 
     commit
 

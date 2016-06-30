@@ -7,22 +7,13 @@ describe 'Commit entity', ->
     expect(Commit).to.not.be.undefined
 
   it 'should use required constructor args', ->
-    author = 'author'
-    branch = 'branch'
+    author  = 'author'
+    branch  = 'branch'
     message = 'message'
-    commit = new Commit author, branch, message
+    url     = 'https://bitbucket.org/user/repo/commits/03f4a7270240708834de475bcf21532d6134777e'
+    commit = new Commit author, branch, message, url
 
     expect(commit.author).to.equal author
     expect(commit.branch).to.equal branch
     expect(commit.message).to.equal message
-
-  it 'should have a default empty file array', ->
-    commit = new Commit
-
-    expect(commit.files).to.have.length 0
-
-  it 'should add files to the array', ->
-    commit = new Commit
-    commit.addFile 'file'
-
-    expect(commit.files).to.have.length 1
+    expect(commit.url).to.equal url
