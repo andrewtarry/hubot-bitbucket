@@ -6,12 +6,7 @@ class Commit
   # @param @author The name of the commit author
   # @param @branch The branch of the commit
   # @param @message The message of the commit
-  # @param @files[] The array of files that have been changed
-  constructor: (@author, @branch, @message, @files = []) ->
-
-  # Add a new file to the commit
-  addFile: (file) ->
-    @files.push file
-
+  # @param @url The URL to the commit
+  constructor: (@author, @branch, @message, @url) ->
 
 module.exports = Commit
